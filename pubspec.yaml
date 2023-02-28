@@ -27,28 +27,27 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.3
-  sqflite: ^2.0.0+3
-  path_provider: ^2.0.2
-  barcode_scan: ^2.0.1
-  font_awesome_flutter: ^9.1.0
-  intl: ^0.17.0
-  geolocator: ^5.3.2+2
-  progress_dialog: ^1.2.4
-  dio: ^4.0.0
-  flutter_launcher_icons: ^0.9.0
-  rflutter_alert: ^2.0.2
-  permission_handler: ^8.1.2
-  android_intent: 0.3.7+3
-  shared_preferences: ^2.0.5
-  local_auth: ^1.1.6
-  trust_location: ^2.0.13
-  change_app_package_name: ^1.0.0
+  sqflite:
+  path_provider:
+  barcode_scan2:
+  font_awesome_flutter:
+  intl:
+  geolocator:
+  progress_dialog:
+  dio:
+  flutter_launcher_icons:
+  rflutter_alert:
+  permission_handler:
+  android_intent:
+  shared_preferences:
+  local_auth:
+  trust_location:
+  change_app_package_name:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-dependency_overrides:
-  platform: ^3.1.0
+
 flutter_icons:
   android: "launcher_icon"
   ios: true

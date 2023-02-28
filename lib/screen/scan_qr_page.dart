@@ -5,7 +5,7 @@ import 'package:attendancewithfingerprint/database/db_helper.dart';
 import 'package:attendancewithfingerprint/model/settings.dart';
 import 'package:attendancewithfingerprint/screen/login_page.dart';
 import 'package:attendancewithfingerprint/utils/strings.dart';
-import 'package:barcode_scan/barcode_scan.dart';
+import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -31,7 +31,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
       // The value of Qr Code
       // Return the json data
       // We need replaceAll because Json from web use single-quote ({' '}) not double-quote ({" "})
-      final newJsonData = barcode.replaceAll("'", '"');
+      final newJsonData = barcode.rawContent.replaceAll("'", '"');
       var data = jsonDecode(newJsonData);
       // Check the type of barcode
       if (data['url'] != null && data['key'] != null) {
@@ -51,7 +51,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
       setState(() {
         _isAlreadyDoSettings = 'no';
       });
-      if (e.code == BarcodeScanner.CameraAccessDenied) {
+      if (e.code == BarcodeScanner.cameraAccessDenied) {
         _barcode = barcode_permission_cam_close;
         utils.showAlertDialog(
             _barcode, "Warning", AlertType.warning, _scaffoldKey, false);
