@@ -106,6 +106,8 @@ class _MenuState extends State<Menu> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
+                        width:100,
+                        height: 100,
                         image: AssetImage('images/logo.png'),
                       ),
                       SizedBox(

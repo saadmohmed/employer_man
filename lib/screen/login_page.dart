@@ -205,8 +205,8 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     margin: EdgeInsets.only(top: 30.0),
-                    child: Image(
-                      image: AssetImage('images/logo.png'),
+                    child: Image(width: 100,height: 100,
+                      image: AssetImage('images/logo.png' ),
                     ),
                   ),
                   SizedBox(

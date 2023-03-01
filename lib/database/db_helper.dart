@@ -47,6 +47,7 @@ class DbHelper {
         )
     ''');
 
+
     // Table for Attendance
     await db.execute('''
       CREATE TABLE $tableAttendance (
