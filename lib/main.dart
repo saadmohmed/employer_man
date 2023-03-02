@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         platform: TargetPlatform.iOS,
       ),
-      home: Directionality(textDirection: TextDirection.rtl,child:ScanQrPage()),    );
+      home: Directionality(textDirection: TextDirection.rtl,child:LoginPage()),    );
   }
 }

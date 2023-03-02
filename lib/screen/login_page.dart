@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../model/settings.dart';
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -52,12 +54,23 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  // Get settings data
+  // Get settings datav
   void getSettings() async {
-    var getSettings = await dbHelper.getSettings(1);
+    String getUrl = 'https://employer.ejad-dev.com';
+    String getKey = '3k3u2oW2zX13xyPJiyBQwSE2QyFRvF0Cf2FbovqG';
+
+    // Set the url and key
+    Settings   settings = Settings(url: getUrl, key: getKey);
+    // Insert the settings
+    await   dbHelper.newSettings(settings);
+
+
+
+    var getSettings = await dbHelper.getSettings(0);
+
     setState(() {
-      getUrl = getSettings.url;
-      getKey = getSettings.key;
+      getUrl = 'https://employer.ejad-dev.com';
+      getKey = '3k3u2oW2zX13xyPJiyBQwSE2QyFRvF0Cf2FbovqG';
 
       getPref();
     });
@@ -65,6 +78,9 @@ class _LoginPageState extends State<LoginPage> {
 
   // Function communicate with the server via API
   login(String fromWhere) async {
+     getUrl = 'https://employer.ejad-dev.com';
+     getKey = '3k3u2oW2zX13xyPJiyBQwSE2QyFRvF0Cf2FbovqG';
+
     var urlLogin = getUrl + getPath;
     if (fromWhere == 'clickButton') pr.show();
 
@@ -269,8 +285,10 @@ class _LoginPageState extends State<LoginPage> {
                           width: double.infinity,
                           height: 50,
                           child: ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async{
+
                               FocusScope.of(context).requestFocus(FocusNode());
+
                               check();
                             },
                             // color: Colors.blue,

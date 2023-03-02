@@ -82,6 +82,9 @@ class _AttendancePageState extends State<AttendancePage> {
   }
 
   getAreaApi() async {
+     getUrl = 'https://employer.ejad-dev.com';
+     getKey = '3k3u2oW2zX13xyPJiyBQwSE2QyFRvF0Cf2FbovqG';
+
     pr.show();
     final uri = utils.getRealUrl(getUrl, getPathArea);
     Dio dio = Dio();
@@ -178,7 +181,7 @@ class _AttendancePageState extends State<AttendancePage> {
 
     // Add data to map
     Map<String, dynamic> body = {
-      'key': dataKey,
+      'key': '3k3u2oW2zX13xyPJiyBQwSE2QyFRvF0Cf2FbovqG',
       'worker_id': getId,
       'q': dataQuery,
       'lat': _currentPosition.latitude,
@@ -272,7 +275,9 @@ class _AttendancePageState extends State<AttendancePage> {
         });
       });
     } else if (data['message'] == 'Error! Something Went Wrong!') {
+      print('rrrrrrrrrrrr');
       Future.delayed(Duration(seconds: 0)).then((value) {
+
         setState(() {
           pr.hide();
 
@@ -281,6 +286,8 @@ class _AttendancePageState extends State<AttendancePage> {
         });
       });
     } else {
+      print('rrrrrrrrrrrr');
+
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
           pr.hide();

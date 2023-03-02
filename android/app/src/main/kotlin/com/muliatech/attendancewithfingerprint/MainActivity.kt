@@ -1,4 +1,4 @@
-package com.muliatech.attendancewithfingerprint
+package employer.ejad.sa
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
